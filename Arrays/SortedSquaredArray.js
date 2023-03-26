@@ -5,7 +5,7 @@
 
 
 function SortedSquaredArray (array) {
-    const newArray = new Array(array.length);
+    const newArray = new Array(array.length).fill(0);
     for (let i = 0; i < array.length; i ++) {
         newArray[i] = Math.pow(array[i], 2);
     }
@@ -27,3 +27,37 @@ console.log(SortedSquaredArray(c))
 // [4, 9, 16]
 // [0, 4, 16, 36]
 // []
+
+function SortedSquaredArray2 (array) {
+    const newArray = new Array(array.length).fill(0);
+    let pointerLeft = 0;
+    let pointerRight = array.length - 1;
+    for (let i = array.length - 1; i >= 0; i--) {
+        const leftSquard = Math.pow(array[pointerLeft], 2)
+        const rightSquard = Math.pow(array[pointerRight], 2)
+        if(leftSquard > rightSquard) {
+            newArray[i] = leftSquard
+            pointerLeft ++
+        } else {
+            newArray[i] = rightSquard
+            pointerRight --
+        }
+    }
+    return newArray
+}
+
+a = [1,4,5,7]
+b = [-6,-1,0,5,10]
+c = []
+
+console.log(SortedSquaredArray2(a))
+console.log(SortedSquaredArray2(b))
+console.log(SortedSquaredArray2(c))
+
+// Out put 
+// [1, 16, 25, 49]
+// [0, 1, 25, 36, 100]
+// []
+
+
+
