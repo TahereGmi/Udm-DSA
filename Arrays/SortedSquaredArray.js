@@ -27,6 +27,8 @@ console.log(SortedSquaredArray(c))
 // [4, 9, 16]
 // [0, 4, 16, 36]
 // []
+// Time complexity is O(nlogn)
+// Space complexity is O(n)
 
 function SortedSquaredArray2 (array) {
     const newArray = new Array(array.length).fill(0);
@@ -59,5 +61,6 @@ console.log(SortedSquaredArray2(c))
 // [0, 1, 25, 36, 100]
 // []
 
-
+// -------------> Time complexity is O(n)
+// Space complexity is O(n)
 
