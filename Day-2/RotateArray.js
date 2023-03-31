@@ -15,3 +15,6 @@ const rotateArray = function (array, k) {
 
     return array
 }
+
+// Time complexity O(n)
+// Space complexity O(k)
