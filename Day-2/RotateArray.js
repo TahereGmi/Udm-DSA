@@ -17,4 +17,29 @@ const rotateArray = function (array, k) {
 }
 
 // Time complexity O(n)
-// Space complexity O(k)
+// Space complexity O(k) => Auxilary spae 
+
+
+// ================== better solution with beter complexity =================
+
+const reverse = (nums, start, end) => {
+    while(start<end) {
+        [nums[start], nums[end]] = [nums[end], nums[start]]
+        start++
+        end--
+    }
+}
+
+const rotateArray2 = (nums, k) => {
+    k = k%nums.length //k=10, length=5, 2 rotations
+    // nums.reverse()
+    reverse(nums,0, nums.length-1)
+    // start = 0, end = k-1
+    reverse(nums,0, k-1)
+    // start=k, end = length -1
+    reverse(nums, k, nums.length-1)
+    return nums
+}
+
+// Time complexity O(n)
+// Space complexity O(1) => No auxialry space
