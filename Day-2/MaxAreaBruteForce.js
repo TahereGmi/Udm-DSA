@@ -6,5 +6,18 @@
 // Notice that you may not slant the container. 
 
 const MaxAreaBruteForce = function (array) {
-    
+    // [3,7,5,6,8,4]
+    let area = 0
+    for(let i = 0; i < array.length -1; i++) {
+        for(let j = i+1; j < array.length; j++) {
+            const height = Math.min(array[i], array[j])
+            const width = (j-i)
+            area = Math.max(area, height*width)
+        }
+    }
+    return area
 }
+
+
+// Time complexity O(n2) => 2 for loops
+// Space complexity O(1) => No Auxilary space
