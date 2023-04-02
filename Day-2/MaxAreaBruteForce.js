@@ -21,3 +21,24 @@ const MaxAreaBruteForce = function (array) {
 
 // Time complexity O(n2) => 2 for loops
 // Space complexity O(1) => No Auxilary space
+
+
+// Better solution =============================================
+
+const MaxArea = function (array){
+    let area = 0
+    let i = 0
+    let j = array.length-1
+    while(i<j){
+        const height = Math.min(array[i], array[j])
+        const width = j-i
+        area = Math.max(area, height*width)
+        if(array[i]<array[j]) i++
+        else j--
+    }
+    return area
+}
+
+
+// Time complexity O(n) => comparison among numbers just once
+// Space complexity O(1) => No Auxilary space
