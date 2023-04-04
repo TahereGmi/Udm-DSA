@@ -23,7 +23,7 @@ const MaxAreaBruteForce = function (array) {
 // Space complexity O(1) => No Auxilary space
 
 
-// Better solution =============================================
+// Optimize solution =============================================
 
 const MaxArea = function (array){
     let area = 0
