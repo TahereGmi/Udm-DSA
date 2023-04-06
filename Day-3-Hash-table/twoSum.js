@@ -20,3 +20,32 @@ function findIndicesSum (array, targetValue) {
 
 // Time Complexity O(n2)
 // Space Complexity O(1)
+
+
+// ==================== More optimal function
+// Let's use hash table
+
+function findIndicesSumGiven (array, targetValue) {
+    const hashTable = {}
+    let neededValue
+    for(let i=0; i<array.length; i++) {
+        neededValue = targetValue - array[i]
+        if(neededValue in hashTable) {
+            return [i, hashTable[neededValue]]
+        } else {
+            hashTable[array[i]] = i
+        }
+    }
+    return []
+}
+
+// findIndicesSumGiven([1,2,3,4], 7)
+// outPut: [3,2]
+
+// [1,2,3,4] tV = 7
+// nV = 6
+// 1:0, 2:1, 3:2
+// nV = 3
+
+// Time Complexity O(n)
+// Space Complexity O(n)
