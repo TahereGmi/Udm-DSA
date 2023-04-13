@@ -11,6 +11,26 @@ const fibonacci = function (n) {
 // 0,1,1,2,3,5,8,13,21,...
 
 console.log(fibonacci(4))
+// 3
 
 // Time complexity O(2 power n)
 // Space complexity O(n)
+
+
+// Better solution with less time complexity
+
+const fibonacci2 = function(n) {
+    const ht = {0:0, 1:1};
+    if(n in ht) {
+        return ht[n];
+    } else {
+        ht[n] = fibonacci2(n-1) + fibonacci2(n-2);
+        return ht[n];
+    }
+}
+
+console.log(fibonacci(4))
+// 3
+
+// Time complexity O(n) => just execute every f(n) once and store in ht
+// Space xomplexity O(n) => maximum depth of callStack or hash table is n
