@@ -17,8 +17,7 @@ console.log(fibonacci(4))
 // Time complexity O(2 power n)
 // Space complexity O(n)
 
-
-// Better solution with less time complexity
+// ------------------------------------
 // Method 2
 
 const fibonacci2 = function(n) {
@@ -37,6 +36,7 @@ console.log(fibonacci(4))
 // Time complexity O(n) => just execute every f(n) once and store in ht
 // Space xomplexity O(n) => maximum depth of callStack or hash table is n
 
+// -------------------------------------
 // Method 3
 const fibonacci3 = function(n) {
     if(n <= 1) return n;
