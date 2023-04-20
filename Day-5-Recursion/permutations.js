@@ -21,3 +21,6 @@ const allPermutation = function (nums) {
     helper (nums, 0);
     return permutation;
 }
+
+// Time complexity => O(n! + n)
+// Space complexity => O(n! + n)
